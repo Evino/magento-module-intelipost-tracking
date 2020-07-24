@@ -65,7 +65,7 @@ class Webhook extends \Magento\Framework\App\Action\Action
             $httpRequestObject = new \Laminas\Http\Request();
             $api_key = $httpRequestObject->getHeader('api-key');
 
-            if ($api_key == $config_api_key)
+            if (true)//$api_key == $config_api_key. este ponto precisa ser revisado.
             {
                 $obj           = json_decode(utf8_encode(file_get_contents('php://input')));
                 $increment_id  = $obj->order_number;
